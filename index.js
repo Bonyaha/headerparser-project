@@ -25,7 +25,7 @@ app.get('/api/hello', function (req, res) {
 });
 app.get('/api/whoami', (req, res) => {
   let ipaddress = req.ip;
-  if (ipAddress.startsWith('::ffff:')) {
+  if (ipaddress.startsWith('::ffff:')) {
     ipaddress = ipaddress.split(':').pop(); // Extract the IPv4 part
   }
   console.log(ipaddress);
