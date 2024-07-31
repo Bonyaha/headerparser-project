@@ -24,15 +24,15 @@ app.get('/api/hello', function (req, res) {
   res.json({ greeting: 'hello API' });
 });
 app.get('/api/whoami', (req, res) => {
-  let ipAddress = req.ip;
+  let ipaddress = req.ip;
   if (ipAddress.startsWith('::ffff:')) {
-    ipAddress = ipAddress.split(':').pop(); // Extract the IPv4 part
+    ipaddress = ipaddress.split(':').pop(); // Extract the IPv4 part
   }
-  console.log(ipAddress);
+  console.log(ipaddress);
   const language = req.headers['accept-language']; 
   const software = req.headers['user-agent']; 
 
-  res.json({ ipAddress, language, software }); 
+  res.json({ ipaddress, language, software }); 
 });
 
 // listen for requests :)
